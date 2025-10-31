@@ -49,12 +49,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>format: html: embed-resources: true</p>
-<p>print (“Wow look at this I’m explaining my code. This is lifechanging. Wow. Coding.”)</p>
 <p>import numpy as np import matplotlib.pyplot as plt</p>
 <p>xs = np.linspace(0,10)</p>
 <p>plt.title(“y = 2x”) plt.xlabel(“x”) plt.ylabel(“y”) plt.plot(xs,2 * xs)</p>
 <p>import pandas as pd</p>
 <p>df = pd.DataFrame(np.array([xs, 2*xs]).transpose()) df.columns = [‘x’,‘y’] df</p>
+<p>import sympy</p>
+<p>x, y = sympy.symbols(“x y”) sympy.Eq(y, 2*x)</p>
+<p>import subprocess # instead of os</p>
+<p>print(subprocess.getoutput(“wc index.qmd”))</p>
 
 </main>
 <!-- /main column -->

@@ -2,8 +2,6 @@ format:
   html:
       embed-resources: true
 
-print ("Wow look at this I'm explaining my code. This is lifechanging. Wow. Coding.")
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -20,4 +18,11 @@ df = pd.DataFrame(np.array([xs, 2*xs]).transpose())
 df.columns = ['x','y']
 df
 
+import sympy
 
+x, y = sympy.symbols("x y")
+sympy.Eq(y, 2*x)
+
+import subprocess # instead of os
+
+print(subprocess.getoutput("wc index.qmd"))
