@@ -2,5 +2,22 @@ format:
   html:
       embed-resources: true
 
-print (Wow look at this I'm explaining my code. This is lifechanging. Wow. Coding.)
+print ("Wow look at this I'm explaining my code. This is lifechanging. Wow. Coding.")
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+xs = np.linspace(0,10)
+
+plt.title("y = 2x")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.plot(xs,2 * xs)
+
+import pandas as pd
+
+df = pd.DataFrame(np.array([xs, 2*xs]).transpose()) 
+df.columns = ['x','y']
+df
+
 
