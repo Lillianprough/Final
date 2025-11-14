@@ -13,10 +13,20 @@ plt.title("Reintroduction of Wolves to Yellowstone Over Time")
 
 plt.show()
 
+# pandas dataframe
 
+import numpy as np
+import pandas as pd
 
-#sympy equation
-
-
-
+population = np.array([
+    [1990, 0],
+    [1995, 21],
+    [2000, 119],
+    [2005, 118],
+    [2010, 97],
+    [2015, 104],
+    [2020, 123],
+    [2025, 110]
+])
+df = pd.DataFrame(population)
 
