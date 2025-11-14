@@ -1,7 +1,4 @@
 #matplotlib
-'''
-For this portion of my project, I wanted to code something somewhat Biology related. I chose the wolf population in Yellowstone.
-
 
 import matplotlib.pyplot as plt
 
@@ -21,6 +18,7 @@ plt.show()
 import numpy as np
 import pandas as pd
 
+
 population = np.array([
     [1990, 0],
     [1995, 21],
@@ -32,8 +30,10 @@ population = np.array([
     [2025, 110]
 ])
 df = pd.DataFrame(population)
-'''
-This is now the sympy requirement of this project!
+df.describe()
+df
+
+
 #sympy stuff
 
 import sympy
