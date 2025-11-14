@@ -1,4 +1,7 @@
 #matplotlib
+'''
+For this portion of my project, I wanted to code something somewhat Biology related. I chose the wolf population in Yellowstone.
+
 
 import matplotlib.pyplot as plt
 
