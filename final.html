@@ -48,16 +48,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>format: html: embed-resources: true</p>
-<p>import numpy as np import matplotlib.pyplot as plt</p>
-<p>xs = np.linspace(0,10)</p>
-<p>plt.title(“y = 2x”) plt.xlabel(“x”) plt.ylabel(“y”) plt.plot(xs,2 * xs)</p>
-<p>import pandas as pd</p>
-<p>df = pd.DataFrame(np.array([xs, 2*xs]).transpose()) df.columns = [‘x’,‘y’] df</p>
-<p>import sympy</p>
-<p>x, y = sympy.symbols(“x y”) sympy.Eq(y, 2*x)</p>
-<p>import subprocess # instead of os</p>
-<p>print(subprocess.getoutput(“wc index.qmd”))</p>
+<p>#matplotlib</p>
+<p>import matplotlib.pyplot as plt</p>
+<p>years = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025] population = [0, 21, 119, 118, 97, 104, 123, 110] # Population</p>
+<p>plt.plot(years, population, marker=‘o’, linestyle=‘-’, color=‘skyblue’)</p>
+<p>plt.xlabel(“Year”) plt.ylabel(“Population”) plt.title(“Reintroduction of Wolves to Yellowstone Over Time”)</p>
+<p>plt.show()</p>
+<p>#sympy equation</p>
 
 </main>
 <!-- /main column -->

@@ -1,28 +1,22 @@
-format:
-  html:
-      embed-resources: true
+#matplotlib
 
-import numpy as np
 import matplotlib.pyplot as plt
 
-xs = np.linspace(0,10)
+years = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025]
+population = [0, 21, 119, 118, 97, 104, 123, 110] # Population
 
-plt.title("y = 2x")
-plt.xlabel("x")
-plt.ylabel("y")
-plt.plot(xs,2 * xs)
+plt.plot(years, population, marker='o', linestyle='-', color='skyblue')
 
-import pandas as pd
+plt.xlabel("Year")
+plt.ylabel("Population")
+plt.title("Reintroduction of Wolves to Yellowstone Over Time")
 
-df = pd.DataFrame(np.array([xs, 2*xs]).transpose()) 
-df.columns = ['x','y']
-df
+plt.show()
 
-import sympy
 
-x, y = sympy.symbols("x y")
-sympy.Eq(y, 2*x)
 
-import subprocess # instead of os
+#sympy equation
 
-print(subprocess.getoutput("wc index.qmd"))
+
+
+
