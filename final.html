@@ -57,7 +57,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="pandas-dataframe" class="level1">
 <h1>pandas dataframe</h1>
 <p>import numpy as np import pandas as pd</p>
-<p>population = np.array([ [1990, 0], [1995, 21], [2000, 119], [2005, 118], [2010, 97], [2015, 104], [2020, 123], [2025, 110]]) df = pd.DataFrame(population)</p>
+<p>population = np.array([ [1990, 0], [1995, 21], [2000, 119], [2005, 118], [2010, 97], [2015, 104], [2020, 123], [2025, 110]]) df = pd.DataFrame(population) ’’’ This is now the sympy requirement of this project! #sympy stuff</p>
+<p>import sympy</p>
+<p>x, y = sympy.symbols(“x y”) sympy.Eq(y, 2*x)</p>
+</section>
+<section id="word-count" class="level1">
+<h1>word count</h1>
+<p>import subprocess # instead of os</p>
+<p>print(subprocess.getoutput(“wc index.qmd”))</p>
 </section>
 
 </main>

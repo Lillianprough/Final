@@ -29,4 +29,16 @@ population = np.array([
     [2025, 110]
 ])
 df = pd.DataFrame(population)
+'''
+This is now the sympy requirement of this project!
+#sympy stuff
 
+import sympy
+
+x, y = sympy.symbols("x y")
+sympy.Eq(y, 2*x)
+
+# word count
+import subprocess # instead of os
+
+print(subprocess.getoutput("wc index.qmd"))
