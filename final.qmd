@@ -1,4 +1,5 @@
 #matplotlib
+# This is the graph section of my final!! I chose to graph the wolf population in Yellowstone as it is Biology related, but still applicable to this class.
 
 import matplotlib.pyplot as plt
 
@@ -34,6 +35,7 @@ df.describe()
 df
 
 
+
 #sympy stuff
 
 import sympy
@@ -45,3 +47,4 @@ sympy.Eq(y, 2*x)
 import subprocess # instead of os
 
 print(subprocess.getoutput("wc index.qmd"))
+
