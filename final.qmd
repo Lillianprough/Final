@@ -1,4 +1,82 @@
-#matplotlib
+---
+title: "Final"
+subtitle: "Thinking Machines"
+author: Lillian Prough
+format:
+  html:
+    theme: flatly
+---
+
+
+
+This is the graph section of my final!! I chose to graph the wolf population in Yellowstone as it is Biology related, but still applicable to this class due to the numerical aspect of it. For some background information, by 1950 there were no wolves in Yellowstone. This was because of an aggressive trend towards shooting them in order to protect farm animals in the mid 1800s. Their absence was incredibly harmful to their ecosystem, as without them prey were able to exhaust the natural resources of the incredible area. They were reintroduced in 1965, as they were an endangered species at that point, and have been one of the most successful and inspiring examples of reintroduction ever since. According to climate change summit, “Now, with as many as 100 gray wolves in Yellowstone National Park, their reintroduction is having an effect that even surprised scientists. Wolves have contributed to bringing elk numbers down from 17,000 in 1995 to just 4,000 today. Since only the healthiest of elk survived, the population is much more robust. All of these elk kills mean more carcasses for scavengers like coyotes, eagles, and ravens. Grizzly bear numbers have increased, too. The grizzlies benefit from the wolves' elk kills, and less elk also means more berries, and just the elk's fear of wolves gives the riverbank trees, like aspen and willow, a chance to regenerate. They can grow to five times their original size in just six years. The songbirds are returning, too, and the bigger trees along the rivers means greater root structures, which means stronger riverbanks and less erosion. Clean water and big trees, beaver paradise. The return of the beaver dams creates new habitats for fish, amphibians, reptiles, and even otters. This shows just some of the trickle-down effects of the wolves' reintroduction, known to scientists as a trophic cascade.” Their incredible impact is why this is so interesting to me. Only one in three wolves have been tagged, so while this data is a good estimate, it is not necessarily one hundred percent accurate. 
+
+
+```{python}
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+
+years = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025]
+population = [0, 21, 119, 118, 97, 104, 123, 110] # Population
+
+plt.plot(years, population, marker='o', linestyle='-', color='skyblue')
+
+plt.xlabel("Year")
+plt.ylabel("Population")
+plt.title("Reintroduction of Wolves to Yellowstone Over Time")
+plt.savefig("populationgraph.svg")
+!(populationgraph.svg)
+
+
+```
+Next is my pandas dataframe of the data in the graph. This helps to make the graph more clear, and provide the individual data points that the graph connects. This way the reader undertands both the relationship between the points and the individual points themselves. 
+
+```{python}
+import numpy as np
+import pandas as pd
+population = np.array([
+    [1990, 0],
+    [1995, 21],
+    [2000, 119],
+    [2005, 118],
+    [2010, 97],
+    [2015, 104],
+    [2020, 123],
+    [2025, 110]
+])
+df = pd.DataFrame(population)
+df.describe()
+df
+```
+The equation below is the slope of the wolf population since 2000. This is not conclusive, since the rate is so slow and uneven that is just due to natural population shifts, not an actual or significant decline. This shows that the wolf population has stabilized.
+```{python}
+import sympy
+x, y = sympy.symbols("x y")
+sympy.Eq(y,-2.7*x + 119)
+```
+import subprocess # instead of os
+
+print(subprocess.getoutput("wc index.qmd"))
+
+I learned a lot from doing this final, and this class in general. The first thing that stood out to me is that I learned a lot more about how my brain works. I have always struggled somewhat with math, and coding has a similar impact on me. It is like another language (although French feels much easier), and I have a very hard time doing it at all without the solid foundation I have in similar things like math. Overall I think being challenged in a different way than I am used to is a very positive thing, and I am grateful for the experience. Additionally, I tend to procrastinate when I am not sure where to start and feel overwhelmed by a task. I feel that this is a very useful thing to know about myself, since it is something that could be (and has been) somewhat harmful. Last of all, I realized that I really need structure when learning, at least with something I tend to struggle with. In my other classes I’ve never really cared about the structure and have felt okay with whatever happens, but I have definitely needed to ask for more structure for this class, and I was very grateful that that was provided.
+
+I believe that scientific computing is useful due to the extent of its analytical powers. I will support this claim using my own coding, examples, and theoretical uses, in order to provide a variety of perspectives on the developing technology. 
+
+To begin with, my own coding is a very basic example of the usefulness of scientific computing. This is for two reasons. The first is that I don’t feel I have the skills necessary to accurately represent the capabilities of scientific computing, and to pretend like my code is the extent of its usefulness would not make sense. The second is that examples that are airing on the side of simplicity tend to be somewhat easier to understand. For example, my code uses a population of wolves in Yellowstone to make a graph. The data is as follows: “years = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025] population = [0, 21, 119, 118, 97, 104, 123, 110] # Population” This was an impressive yet straightforward instance of reintroduction. Yellowstone had nearly no wolves due to hunting, and they were on the endangered species list. Through my graph the quick growth and eventual leveling of the wolf populations is shown. This is one of the uses of scientific computing. It is an efficient way to convey information that is easy to edit. The second part of my code was a pandas data frame. This is useful in showing the individual data points, which furthers the reader’s overall understanding of the graph. I did this by listing the data like so: [1990, 0], [1995, 21], [2000, 119], [2005, 118], [2010, 97], [2015, 104], [2020, 123],[2025, 110] ]). These two functions combined are what allow scientific computing to prioritize honest and clear forms of data communication and expression. Often, graphs are easily manipulated in order to make it look like the data presents a different or exaggerated version of the actual facts. This is something that is unfortunately very common in informational outlets that rely on gathering interest, but it spreads misinformation and defeats the point of scientific studies and analysis. Since scientific computing always has a very clear history and presents data as it is, in a straightforward way, it is easier to access the data itself than in other ways of presenting data. The last aspect of my code was a simple equation using latex. The equation was y = 119 - 2.7x.  I made this equation to make sure that the way in which I was interpreting the data was actually accurate and reasonable. It proved that it was. When wolves were introduced to Yellowstone in 1995, there was an immediate spike in population, as there had been no wolves in the area previously. This spike continued until 2000, where the population began to enter a cycle of rising and falling, with the average decrease I calculated being 2.7 wolves a year (again, this is the average, since you of course cannot have partial wolves die). This shows that although populations were decreasing, the change was too low to be a significant indicator of anything. I theorize that this is partially due to packs leaving the boundaries of Yellowstone and no longer being a part of the population data. 
+
+To summarize, my data shows the benefits of scientific computing in two main ways. The first is that scientific computing can, when done correctly, provide clear data that efficiently informs the viewer. The second is that it is an invaluable tool in fighting misinformation and providing the data behind graphs. 
+
+There is one potential issue with the accessibility of scientific computing in regards to conveying information, and that is that not very many people know how to code or interpret code. However, platforms like Github make this somewhat more accessible. Additionally, learning platforms are also working to make coding possible for everyone. For example, Google recently made a donation to Neil Squire in order for them to”include enhancing screen reader support, integrating ARIA attributes, and addressing challenges for users with limited dexterity. This will enable more youth with disabilities to engage with coding education and develop STEM skills.” Steps are being made to make coding an incredible tool for everyone, so that it will be able to have a greater impact on education, analysis, and combating information. 
+
+Additionally, scientific computing is being used to exponentially expand our goals and potential in research. According to energy.gov, “Scientific computing, including modeling, simulation and artificial intelligence, coupled with traditional theoretical and experimental approaches, enables breakthrough scientific discoveries and pushes innovation forward. As scientific modeling and simulation become more complex and ambitious, high-performance computing (HPC), commonly known as supercomputing, provides the invaluable ability to perform these complex calculations at high speeds. Supercomputers along with advances in software, algorithms, methods, tools and workflows equip researchers with powerful tools needed to study systems that would otherwise be impractical, or impossible, to investigate by traditional means due to their complexity or the danger they pose.” This means that supercomputers, an incredibly powerful aspect of scientific computing, will be a massive and very important contributor to ground breaking research going forward. According to the same source, there is currently a very exciting development. “the Nation's first exascale supercomputer. In June, 2022, the international Top500 list of most powerful systems in the world named the Department of Energy (DOE) Office of Science system Frontier the world's fastest supercomputer.”... “Exascale systems will provide the next-generation of computing desperately needed to understand climate change and prediction, design new materials for energy technologies and fusion reactors, build stronger and more adaptive power grid, develop new Cancer treatments, provide rapid near real-time data analysis for scientific facilities such as light sources, and address challenges in energy, environment, and national security.” This is such an exciting development for the scientific community. I feel like at a certain point, there is only so much in depth research that was, as humans can do. This computer and similar technology will greatly expand our analytical skills in ways that I at least cannot even begin to imagine.
+ 
+While I know nothing about the new technology in the world of scientific computing, I am very interested in the current and potential impacts on climate change. According to UC Berkley, “For decades, supercomputers have played a critical role in studying our climate and predicting how global changes will impact the world, as well as potential ways to mitigate those effects. With each new generation of more powerful computers, scientists have been able to create simulations in higher resolution, which reveal both new challenges and potential solutions.” As climate change worsens and our weather patterns become less predictable as a result, scientific computing will play an important role in helping us anticipate and respond to the upcoming challenges that we will face. There are so many infinitely complex variables that climate change has been and will continue to impact. Among these are “…rising temperatures, sea level rise, drought, flooding, and more. These events affect things that we depend upon and value, like water, energy, transportation, wildlife, agriculture, ecosystems, and human health.” (NOAA). However, these broad terms don’t take into account everything else that will be impacted by them. UC Berkley has been trying to address this issue for a while, and stated, “Although current climate models are actually ensembles of interconnected physical models of components like air temperature, ocean temperature, landforms, etc., Yelick said that future research will require a broader range of disciplines to fully understand and try to mitigate the impacts. Areas such as economics, sociology, engineering, material science, law and public policy will need to join the community.”” One ecosystem is infinitely complex, from the microbes to the mammals to weather events, disease, and population growth. There are so many variables that impact ecosystem health- all of which will be impacted by climate change. This is unfortunately too much for us to be able to accurately keep track of, let alone predict. This is where scientific computing proves to be invaluable. UC Berkley has been at the forefront of this new kind of research, and stated, “With the emergence of exascale computers, researchers are looking to extend their modeling runs to simulate climate change over a century or longer.”... “using data-driving models to understand the impacts of climate variability and long-term change on ecosystem functions, as well as related feedbacks to the atmosphere through ecosystem carbon cycling and water use. His work combines large ecological data sets (including field studies and remote sensing) with models of ecosystem state and function and machine learning methods to study key physical and biological processes.” The bottom line is, as climate change worsens, and the variables become increasingly complicated and unpredictable, scientific computing will be essentially our only way of keeping track of and responding to the consequences. 
+
+There is one compelling argument against scientific computing, and that is that it is a leading contributor to climate change. According to UC Berkley, “Servers generate enormous amounts of heat, requiring continuous air conditioning or specialized cooling systems to prevent overheating. Many of these data centers rely on fossil fuels for their electricity, making them significant contributors to greenhouse gas emissions. Data centers come with enormous energy demands – consuming about 1-2% of the world’s total electricity, and that figure is expected to rise as the internet continues to expand. The growth of cloud computing has been a revolutionary shift, enabling businesses to store and process data remotely. But as companies and individuals increasingly rely on the cloud, the demand for large-scale data centers has surged. These facilities require immense amounts of energy to process, store, and transmit data. Even more energy-intensive is artificial intelligence (AI). Training a single AI model can require the computational power equivalent to five cars’ worth of carbon emissions over their lifetime (based on research from the University of Massachusetts).” While this is very true, I don't believe that it negates the benefits of scientific computing. I believe a feasible compromise would be to cut down the use of huge servers and AI in non-essential ways. This would mean that the majority of waste contributed by computing would be from active research, so that hopefully the benefits will outweigh the costs. While it is undeniably ironic that the one thing that may help us respond to climate change is one of the leading contributors to climate change, it is important to acknowledge that it is one of the only options we have, and that it is better to try and fail that to do nothing at all. 
+
+In conclusion, scientific computing is very clearly an amazing tool. While there are some controversial issues surrounding it, they pale in comparison to the consequences we may face if we don’t use it. It will be an essential tool in helping to fix the beautifully complex and ever changing world we live in. 
+matplotlib
 # This is the graph section of my final!! I chose to graph the wolf population in Yellowstone as it is Biology related, but still applicable to this class.
 
 import matplotlib.pyplot as plt
